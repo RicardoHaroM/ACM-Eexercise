@@ -40,12 +40,16 @@ class TxtManager{
 
     deserializeDataToDataSets(dataFromTxt){
         
-        let dataSets = dataFromTxt.split('\r\n\r\n')
+        if(dataFromTxt.includes('\r')) dataFromTxt= dataFromTxt.replaceAll('\r','')
+
+        let dataSets = dataFromTxt.split('\n\n')
         
         return dataSets;
     }
+
     deserializeDataToDataLines(dataSet){
-        let dataLines = dataSet.split('\r\n')
+
+        let dataLines = dataSet.split('\n')
         
         return dataLines;
     }
