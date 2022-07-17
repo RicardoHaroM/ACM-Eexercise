@@ -26,8 +26,8 @@ class TimeRecord{
         return false;
     }
 
-    isGreaterThanATimeInterval(endIntervalTime){
-        if(endIntervalTime<this.startHour) return true;
+    isLessThanATimeInterval(startIntervalTime){
+        if(this.endHour<startIntervalTime) return true;
 
         return false;
     }

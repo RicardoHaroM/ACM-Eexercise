@@ -20,11 +20,11 @@ test('Check if two time intervals are in the same time frame',()=>{
 test('Check if a time interval is less than other',()=>{
     let example = new TimeRecord('JUAN',1000,1200)
 
-    const resultOne = example.isGreaterThanATimeInterval(900)
-    const resultTwo = example.isGreaterThanATimeInterval(1000)
-    const resultThree = example.isGreaterThanATimeInterval(1100)
+    const resultOne = example.isLessThanATimeInterval(900)
+    const resultTwo = example.isLessThanATimeInterval(1000)
+    const resultThree = example.isLessThanATimeInterval(1300)
 
-    expect(resultOne).toBe(true);
+    expect(resultOne).toBe(false);
     expect(resultTwo).toBe(false);
-    expect(resultThree).toBe(false);
+    expect(resultThree).toBe(true);
 })

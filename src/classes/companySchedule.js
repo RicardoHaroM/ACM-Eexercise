@@ -48,11 +48,11 @@ class CompanySchedule{
                 this.employeeRegister.addEmployeeConcurrence(timeElementInSchedule.employeeName,timeRecord.employeeName)
             }
 
-            if(timeRecord.startHour>timeElementInSchedule.startHour && indexForNewElement==undefined){
-                indexForNewElement = i+1;
+            if(timeRecord.startHour<timeElementInSchedule.startHour && indexForNewElement==undefined){
+                indexForNewElement = i;
             }
 
-            if(timeRecord.isGreaterThanATimeInterval(timeElementInSchedule.endHour)){
+            if(timeRecord.isLessThanATimeInterval(timeElementInSchedule.startHour)){
                 break;
             }
         }
